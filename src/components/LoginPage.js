@@ -42,7 +42,24 @@ const LoginPage = () => {
         variant="outlined"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        sx={{ marginBottom: '16px', input: { color: '#FFA500' } }}
+        sx={{
+          marginBottom: '16px',
+          input: { color: '#FFA500' },
+          '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+              borderColor: '#FFA500', // Border color for normal state
+            },
+            '&:hover fieldset': {
+              borderColor: '#FFA500', // Border color on hover
+            },
+            '&.Mui-focused fieldset': {
+              borderColor: '#FFA500', // Border color when focused
+            },
+          },
+        }}
+        InputLabelProps={{
+          style: { color: '#FFA500' }, // Label text color
+        }}
       />
       <TextField
         fullWidth
@@ -51,7 +68,24 @@ const LoginPage = () => {
         variant="outlined"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        sx={{ marginBottom: '24px', input: { color: '#FFA500' } }}
+        sx={{
+          marginBottom: '24px',
+          input: { color: '#FFA500' },
+          '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+              borderColor: '#FFA500',
+            },
+            '&:hover fieldset': {
+              borderColor: '#FFA500',
+            },
+            '&.Mui-focused fieldset': {
+              borderColor: '#FFA500',
+            },
+          },
+        }}
+        InputLabelProps={{
+          style: { color: '#FFA500' },
+        }}
       />
       <Button fullWidth variant="contained" color="warning" onClick={handleLogin}>
         Login
